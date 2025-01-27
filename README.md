@@ -1,0 +1,1 @@
+# Predictions on direction of stock data
