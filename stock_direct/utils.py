@@ -9,6 +9,29 @@ from sklearn.metrics import mean_squared_error
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 
+def explore(df: pd.DataFrame) -> None:
+    """Perform exploratory data analysis on a DataFrame."""
+    if df is None:
+        raise ValueError("DataFrame 'df' cannot be None")
+    print("--- Exploratory Data Analysis ---")
+    print("---------------------------------")
+    print("Head of DataFrame:\n", df.head())
+    print("---------------------------------")
+    print("Shape of DataFrame:\n", df.shape)
+    print("---------------------------------")
+    print("Columns in DataFrame:\n", df.columns)
+    print("---------------------------------")
+    print("Data types of columns:\n", df.dtypes)
+    print("---------------------------------")
+    print("Number of null values in each column:\n", df.isnull().sum())
+    print("---------------------------------")
+    print("Number of unique values in each column:\n", df.nunique())
+    print("---------------------------------")
+    print("Summary statistics of DataFrame:\n", df.describe())
+    print("---------------------------------")
+    print("Summary info of DataFrame:\n", df.info())
+
+
 def find_non_numeric_cols(df: pd.DataFrame) -> List[Tuple[str, np.generic]]:
     """Find columns in a DataFrame that are not numeric."""
     return [
